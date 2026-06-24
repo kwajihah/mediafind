@@ -1,0 +1,8 @@
+CREATE TABLE audio_feature_log (
+
+    log_id SERIAL PRIMARY KEY,
+
+    file_id INT,
+
+    action_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
