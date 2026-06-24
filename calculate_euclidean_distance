@@ -1,0 +1,41 @@
+CREATE OR REPLACE FUNCTION calculate_distance(
+
+    q_mfcc1 NUMERIC,
+    q_mfcc2 NUMERIC,
+    q_tempo NUMERIC,
+    q_energy NUMERIC,
+
+    db_mfcc1 NUMERIC,
+    db_mfcc2 NUMERIC,
+    db_tempo NUMERIC,
+    db_energy NUMERIC
+
+)
+
+RETURNS NUMERIC
+
+AS $$
+
+BEGIN
+
+    RETURN SQRT(
+
+        POWER(q_mfcc1 - db_mfcc1,2)
+
+        +
+
+        POWER(q_mfcc2 - db_mfcc2,2)
+
+        +
+
+        POWER(q_tempo - db_tempo,2)
+
+        +
+
+        POWER(q_energy - db_energy,2)
+
+    );
+
+END;
+
+$$ LANGUAGE plpgsql;
