@@ -1,0 +1,21 @@
+CREATE VIEW vw_audio_summary AS
+
+SELECT
+
+    s.student_name,
+
+    s.group_name,
+
+    m.file_name,
+
+    af.tempo,
+
+    af.energy
+
+FROM student s
+
+JOIN media_file m
+ON s.student_id = m.student_id
+
+JOIN audio_features af
+ON m.file_id = af.file_id;
