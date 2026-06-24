@@ -1,0 +1,49 @@
+CREATE OR REPLACE FUNCTION find_similar_audio(
+
+    p_mfcc1 NUMERIC,
+    p_mfcc2 NUMERIC,
+    p_tempo NUMERIC,
+    p_energy NUMERIC
+
+)
+
+RETURNS TABLE (
+
+    file_id INT,
+    similarity_score NUMERIC
+
+)
+
+AS $$
+
+BEGIN
+
+    RETURN QUERY
+
+    SELECT
+
+        af.file_id,
+
+        calculate_distance(
+
+            p_mfcc1,
+            p_mfcc2,
+            p_tempo,
+            p_energy,
+
+            af.mfcc1,
+            af.mfcc2,
+            af.tempo,
+            af.energy
+
+        ) AS score
+
+    FROM audio_features af
+
+    ORDER BY score ASC
+
+    LIMIT 5;
+
+END;
+
+$$ LANGUAGE plpgsql;
