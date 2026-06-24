@@ -1,0 +1,51 @@
+CREATE OR REPLACE PROCEDURE insert_audio_feature(
+
+    p_file_id INT,
+
+    p_mfcc1 NUMERIC,
+    p_mfcc2 NUMERIC,
+    p_mfcc3 NUMERIC,
+    p_mfcc4 NUMERIC,
+    p_mfcc5 NUMERIC,
+
+    p_tempo NUMERIC,
+    p_energy NUMERIC
+
+)
+LANGUAGE plpgsql
+AS $$
+
+BEGIN
+
+    INSERT INTO audio_features(
+
+        file_id,
+
+        mfcc1,
+        mfcc2,
+        mfcc3,
+        mfcc4,
+        mfcc5,
+
+        tempo,
+        energy
+
+    )
+    VALUES(
+
+        p_file_id,
+
+        p_mfcc1,
+        p_mfcc2,
+        p_mfcc3,
+        p_mfcc4,
+        p_mfcc5,
+
+        p_tempo,
+        p_energy
+
+    );
+
+END;
+
+$$;
