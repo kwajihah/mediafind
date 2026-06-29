@@ -1,0 +1,8 @@
+{
+    "name": "gw04/mediafind",
+    "description": "MediaFind - BITP3353 Multimedia Database Project",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+    }
+}
