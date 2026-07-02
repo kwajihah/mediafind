@@ -1,8 +1,13 @@
 {
     "name": "gw04/mediafind",
-    "description": "MediaFind - BITP3353 Multimedia Database Project",
+    "description": "MediaFind — BITP3353 Multimedia Database Retrieval System",
     "type": "project",
     "require": {
         "php": ">=8.0"
-    }
+    },
+    "authors": [
+        {"name": "Khairul Wajihah Binti Khairuddin", "role": "Database Designer"},
+        {"name": "Miya Aoyon",                       "role": "System Analyst"},
+        {"name": "Miza Binti Mohamad Radzi",         "role": "UI Developer"}
+    ]
 }

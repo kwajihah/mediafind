@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📂 MediaFind — Multimedia Database Retrieval System
 
-## Getting Started
+**Course:** BITP3353 Multimedia Database  
+**Group:** GW04 · Universiti Teknikal Malaysia Melaka (UTeM)  
+**Lecturer:** Ts. Dr. Hidayah Bt. Rahmalan
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 👥 Group Members
+
+| No | Name | Matric No | Role |
+|----|------|-----------|------|
+| 1 | Khairul Wajihah Binti Khairuddin | B032410184 | Database Designer |
+| 2 | Miya Aoyon | B032220052 | System Analyst |
+| 3 | Miza Binti Mohamad Radzi | B032310641 | UI Developer |
+
+---
+
+## 📋 Project Overview
+
+MediaFind is a web-based multimedia database retrieval system built with **PHP + MySQL** that supports three retrieval methods:
+
+| Method | Description |
+|--------|-------------|
+| **ABR** — Attribute-Based Retrieval | Filter by file type, size, group, matric number |
+| **TBR** — Text-Based Retrieval | Keyword search across names, mottos, file names |
+| **CBR** — Content-Based Retrieval | Search by mood label, video resolution, audio features |
+
+---
+
+## 🗄 Database Schema
+
+**Tables:** `students`, `files`  
+**Database:** `gw_04` (XAMPP local) / `gw04` (UTeM server)
+
+Import `GW04.sql` into phpMyAdmin to set up all tables and sample data.
+
+---
+
+## 🚀 How to Run (XAMPP)
+
+1. Start **Apache** and **MySQL** in XAMPP Control Panel
+2. Open `http://localhost/phpmyadmin`
+3. Click database `gw_04` → **SQL tab** → paste contents of `GW04.sql` → **Go**
+4. Copy this project folder into `C:\xampp\htdocs\grp_project\`
+5. Open browser → `http://localhost/grp_project/index.php`
+
+---
+
+## 📁 Project Structure
+
+```
+mediafind/
+├── .github/workflows/    # CI workflows
+├── includes/
+│   ├── db_connect_utem.php   # Database connection (PDO)
+│   ├── header.php            # Shared HTML header + nav
+│   └── footer.php            # Shared HTML footer
+├── public/               # Images and static assets
+├── GW04.sql              # Database schema + sample data
+├── composer.json         # PHP project config
+├── index.php             # Dashboard homepage
+├── search.php            # ABR / TBR / CBR retrieval
+└── student.php           # Student list and search
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔗 Live Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[bitp3353.utem.edu.my/2026/all/GroupMDB/GW04/](https://bitp3353.utem.edu.my/2026/all/GroupMDB/GW04/)
